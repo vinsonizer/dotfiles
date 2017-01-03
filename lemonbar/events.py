@@ -52,7 +52,7 @@ def on_workspace_urgent(i3, e):
     update_workspaces(i3)
 
 time.sleep(1)
-termiteconfig = open('/home/patrik/.config/termite/config', 'r')
+termiteconfig = open('/home/jason/.config/termite/config', 'r')
 info = termiteconfig.read()
 
 for s in info.splitlines():
