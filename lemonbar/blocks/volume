@@ -1,16 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 # OLDCOLOR = 77777794A5BC  3E4958
 
 CARD="${1:-0}"
 MIXER="${2:-default}"
 trap "echo Booh!" SIGHUP
-mute=$(amixer -c $CARD -M -D $MIXER get Master | grep Playback | grep -q off && echo 1 || echo 0)
+mute=$(amixer -c $CARD -M -D $MIXER get IEC958 | grep Playback | grep -q off && echo 1 || echo 0)
 if [ $mute -eq 1 ]
 then
 	echo " %{F#67727E}%{+u +o}%{-u -o}━━━━━━━━━━━━━━"
 else
-	# echo "%{+u +o}%{-u -o}━━━━━━━%{+u +o}▊%{-u -o}%{F#67727E}━━━━━━━"
-	pc=$(amixer -c $CARD -M -D $MIXER get Master |
+	echo "%{+u +o}%{-u -o}━━━━━━━%{+u +o}▊%{-u -o}%{F#67727E}━━━━━━━"
+	pc=$(amixer -c $CARD -M -D $MIXER get IEC958 |
 	echo $(sed -n "s/^[^:]*: Playback [0-9]* \[\([0-9]*%\)\] .*/$symbol \1/p" | head -n1))
 	pc=${pc::-1}
 	if [ $pc -eq 100 ]
@@ -71,7 +71,7 @@ fi
 
 	
 
-#amixer -c $CARD -M -D $MIXER get Master |
+#amixer -c $CARD -M -D $MIXER get IEC958|
 #echo $(sed -n "s/^[^:]*: Playback [0-9]* \[\([0-9]*%\)\] .*/$symbol \1/p" | head -n1)
 #echo ""
-#echo $(amixer -c $CARD -M -D $MIXER get Master | grep Playback | grep -q off && echo "#F5A3A3" || echo "#EEEEEE")
+#echo $(amixer -c $CARD -M -D $MIXER get IEC958| grep Playback | grep -q off && echo "#F5A3A3" || echo "#EEEEEE")
