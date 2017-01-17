@@ -163,8 +163,8 @@ bar {
 # Gaps
 #smart_gaps on
 smart_borders on
-gaps inner 8 
-gaps outer 16 
+gaps inner 4 
+gaps outer 0 
 new_window pixel 0
 
 # Background and compositor
