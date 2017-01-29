@@ -175,3 +175,23 @@ exec /home/jason/.fehbg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #for_window [class="Google-chrome"] floating enable
+
+# Special Function Keys
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 10%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 10%-
+
+#BINDSYM XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
