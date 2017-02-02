@@ -1,5 +1,9 @@
 export localdir=`pwd`
 
+pushd ${HOME}
+
+mkdir -p ${HOME}/.config
+
 ln -s $localdir/xinitrc       ${HOME}/.xinitrc
 ln -s $localdir/compton.conf  ${HOME}/.compton.conf
 ln -s $localdir/i3blocks.conf ${HOME}/.i3blocks.conf
