@@ -36,5 +36,5 @@ fi
 
 source ${HOME}/.bashrc
 
-${HOME}/.fehbg | ${HOME}/.scripts/bg_downloader.sh &
+${HOME}/.dotfiles/scripts/bg_downloader.sh &
 exec i3
