@@ -169,7 +169,6 @@ new_window pixel 0
 
 # Background and compositor
 exec compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --shadow-exclude "! name~=''" --config ~/.compton.conf -b
-exec /home/jason/.fehbg
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
