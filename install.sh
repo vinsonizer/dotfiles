@@ -4,10 +4,25 @@ pushd ${HOME}
 
 mkdir -p ${HOME}/.config
 
-ln -s $localdir/xinitrc       ${HOME}/.xinitrc
-ln -s $localdir/compton.conf  ${HOME}/.compton.conf
-ln -s $localdir/i3blocks.conf ${HOME}/.i3blocks.conf
-ln -s $localdir/i3            ${HOME}/.config/i3
-ln -s $localdir/i3blocks      ${HOME}/.config/i3blocks
-ln -s $localdir/termite       ${HOME}/.config/termite
-ln -s $localdir/polybar       ${HOME}/.config/polybar
+dots=( xinitrc compton.conf i3blocks.conf )
+configs=( i3 i3blocks termite polybar mpd )
+
+for i in "${dots[@]}";
+do
+  if [ -f "$localdir/.$i" ];
+  then
+    echo $i already exists
+  else
+    ln -s $localdir/$i ${HOME}/.$i
+  fi
+done
+
+for i in "${configs[@]}";
+do
+  if [ -f "$localdir/.config/$i" ];
+  then
+    echo $i already exists
+  else
+    ln -s $localdir/$i ${HOME}/.config/$i
+  fi
+done
