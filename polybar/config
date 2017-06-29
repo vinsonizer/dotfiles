@@ -124,7 +124,7 @@ label-visible-padding = ${self.label-focused-padding}
 ws-icon-0 = 1;
 ws-icon-1 = 2; 
 ws-icon-2 = 3;
-ws-icon-3 = 4;
+ws-icon-3 = 4; 
 
 [module/mpd]
 type = internal/mpd
@@ -188,7 +188,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp108s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
