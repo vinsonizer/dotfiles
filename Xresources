@@ -1,0 +1,7 @@
+Xautolock.corners     : +000
+Xautolock.cornersize  : 10
+Xautolock.locker      : /home/jason/.dotfiles/scripts/locker.sh
+Xautolock.time        : 5
+Xautolock.cornerdelay : 5
+Xautolock.notify      : 5
+Xautolock.notifier    : '/usr/bin/notify-send' -u low "Idle Lock" "About to Lock the Screen" -t 5
