@@ -36,6 +36,7 @@ fi
 export TERMINAL=/usr/bin/termite
 export XDG_CURRENT_DESKTOP=i3
 
-source ${HOME}/.bashrc
+source ${HOME}/.xprofile
 
+xss-lock -- /home/jason/.dotfiles/scripts/locker.sh &
 exec i3
