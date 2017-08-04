@@ -26,6 +26,7 @@ width = 100%
 height = 27
 offset-x = 0
 offset-y = 0
+fixed-center = true
 
 ;background = ${xrdb:color9}
 background = ${colors.background}
@@ -51,9 +52,9 @@ font-1 = Wuncon Siji:pixelsize=12
 font-2 = FontAwesome:pixelsize=14
 
 modules-left = i3 xwindow
-modules-center = date
+modules-center = date weather
 ;modules-right = xbacklight volume memory cpu wlan battery temperature 
-modules-right = pkg weather wlan battery
+modules-right = pkg wlan battery
 
 tray-position = right
 tray-padding = 2
