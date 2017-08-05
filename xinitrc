@@ -33,10 +33,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-export TERMINAL=/usr/bin/termite
+export TERMINAL=termite
 export XDG_CURRENT_DESKTOP=i3
-
-source ${HOME}/.xprofile
 
 xss-lock -- /home/jason/.dotfiles/scripts/locker.sh &
 exec i3
