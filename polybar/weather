@@ -18,7 +18,7 @@ if city and len(city) > 0:
 
 weather = eval(str(urllib.request.urlopen("http://api.openweathermap.org/data/2.5/weather?lat={}&lon={}&APPID={}&units={}".format(lat, long, api_key, units)).read())[2:-1])
 
-info = weather["weather"][0]["description"].capitalize()
+info = weather["weather"][0]["description"].title()
 temp = int(float(weather["main"]["temp"]))
 
 print("%s%s, %i °%s" % (city, info, temp, unit_key))
