@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export TERMINAL=termite
+source ${HOME}/.aliases

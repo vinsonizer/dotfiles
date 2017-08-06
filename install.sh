@@ -4,12 +4,12 @@ pushd ${HOME}
 
 mkdir -p ${HOME}/.config
 
-dots=( xinitrc compton.conf i3blocks.conf )
-configs=( i3 i3blocks termite polybar mpd )
+dots=( xinitrc xprofile compton.conf aliases)
+configs=( i3 termite polybar )
 
 for i in "${dots[@]}";
 do
-  if [ -f "$localdir/.$i" ];
+  if [ -f "${HOME}/.$i" ];
   then
     echo $i already exists
   else
@@ -19,7 +19,7 @@ done
 
 for i in "${configs[@]}";
 do
-  if [ -f "$localdir/.config/$i" ];
+  if [ -f "${HOME}/.config/$i" ];
   then
     echo $i already exists
   else
