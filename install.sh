@@ -26,3 +26,5 @@ do
     ln -s $localdir/$i ${HOME}/.config/$i
   fi
 done
+
+echo "source $HOME/.aliases" >> $HOME/.bashrc
