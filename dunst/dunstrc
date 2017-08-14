@@ -11,8 +11,8 @@
     # <http://developer.gnome.org/pango/stable/PangoMarkupFormat.html>.
     # If markup is not allowed, those tags will be stripped out of the
     # message.
-    allow_markup = yes
-     plain_text = no
+    markup = yes
+    plain_text = no
     
     # The format of the message.  Possible variables are:
     #   %a  appname
@@ -148,14 +148,15 @@
     icon_position = left
     max_icon_size= 16 
 
+    # Frame config
+    frame_width = 3
+    frame_color = "#8EC07C"
+
+
     # Paths to default icons.
     #icon_folders=/usr/share/icons/Numix-Bevel/16x16/actions:/usr/share/icons/Numix-Bevel/16x16/animations:/usr/share/icons/Numix-Bevel/16x16/apps:/usr/share/icons/Numix-Bevel/16x16/categories:/usr/share/icons/Numix-Bevel/16x16/devices:/usr/share/icons/Numix-Bevel/16x16/emblems:/usr/share/icons/Numix-Bevel/16x16/mimetypes:/usr/share/icons/Numix-Bevel/16x16/places:/usr/share/icons/Numix-Bevel/16x16/status
     icon_folders=/usr/share/icons/Numix-Circle/48/apps
 
-
-[frame]
-    width = 3
-    color = "#8EC07C"
 
 [shortcuts]
 
