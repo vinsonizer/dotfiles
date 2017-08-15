@@ -6,4 +6,5 @@ check=$((pac + aur))
 if [[ "$check" != "0" ]]
 then
     echo "$pac %{F#5b5b5b}%{F-} $aur"
+    /usr/bin/notify-send "Package Updates" "Found $pac Core and $aur AUR Updates"
 fi
