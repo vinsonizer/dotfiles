@@ -228,7 +228,7 @@
 [package_updates]
     summary = "Package Updates"
     urgency = low
-    new_icon = package_manager_icon
+    new_icon = package-manager-icon
 
 #[espeak]
 #    summary = "*"
