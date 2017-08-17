@@ -166,7 +166,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id /usr/bin/variety
 
 # Locker
-bindsym $mod+l exec "/home/jason/.dotfiles/scripts/locker.sh"
+bindsym $mod+l exec --no-startup-id "/home/jason/.dotfiles/scripts/locker.sh"
 exec --no-startup-id xautolock 
 
 # Notifications
