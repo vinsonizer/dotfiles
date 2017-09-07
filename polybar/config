@@ -127,7 +127,8 @@ label-visible-padding = ${self.label-focused-padding}
 ws-icon-0 = 1;
 ws-icon-1 = 2; 
 ws-icon-2 = 3;
-ws-icon-3 = 4; 
+ws-icon-3 = 4;
+ws-icon-4 = 5; 
 
 [module/mpd]
 type = internal/mpd
@@ -348,7 +349,7 @@ menu-2-1-exec = menu-open-0
 
 [module/pkg]
 type = custom/script
-interval = 600
+interval = 1800
 format = <label>
 ;format-underline = #dc322f
 label = "%output:0:30%"
