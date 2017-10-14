@@ -116,8 +116,6 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-workspace_layout tabbed
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -154,8 +152,8 @@ bindsym $mod+r mode "resize"
 # Gaps
 # smart_gaps on
 smart_borders on
-gaps inner 20
-gaps outer 0
+gaps inner 8
+gaps outer 4
 new_window pixel 0
 
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -215,6 +213,9 @@ exec --no-startup-id dunst
 exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/bin/blueman-applet
 
+# Redshift
+exec --no-startup-id /usr/bin/redshift-gtk
+
 #for_window [class="Google-chrome"] floating enable
 
 # Special Function Keys
@@ -239,3 +240,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshot support
 bindsym --release Print exec --no-startup-id scrot /tmp/`date +%Y%m%d_%H%M%S`.png && exec notify-send 'SCROT' 'Screenshot taken (/tmp)'
+
+# Special handler for chrome popups
+for_window [window_role="pop-up"] floating enable
