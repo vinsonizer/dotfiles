@@ -349,7 +349,7 @@ menu-2-1-exec = menu-open-0
 
 [module/pkg]
 type = custom/script
-interval = 1800
+interval = 300
 format = <label>
 ;format-underline = #dc322f
 label = "%output:0:30%"
@@ -360,7 +360,7 @@ click-right = termite -e "yaourt -Syu --aur"
 
 [module/weather]
 type = custom/script
-interval = 900
+interval = 600
 format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
@@ -369,7 +369,7 @@ exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
 [module/dotfiles]
 type = custom/script
-interval = 1800
+interval = 600
 format = <label>
 ;format-underline = #dc322f
 ;label = "%output:0:30%"
