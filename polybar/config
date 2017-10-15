@@ -54,7 +54,7 @@ font-2 = FontAwesome:pixelsize=14
 modules-left = i3 xwindow
 modules-center = date weather
 ;modules-right = xbacklight volume memory cpu wlan battery temperature 
-modules-right = pkg wlan battery
+modules-right = pkg dotfiles wlan battery
 
 tray-position = right
 tray-padding = 2
@@ -354,7 +354,7 @@ format = <label>
 ;format-underline = #dc322f
 label = "%output:0:30%"
 exec = ~/.config/polybar/pkg.sh
-;exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 click-left = termite -e "sudo pacman -Syu"
 click-right = termite -e "yaourt -Syu --aur"
 
@@ -365,5 +365,14 @@ format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 exec = source ~/.config/polybar/env.sh && ~/.config/polybar/weather
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
+[module/dotfiles]
+type = custom/script
+interval = 1800
+format = <label>
+;format-underline = #dc322f
+label = "%output:0:30%"
+exec = ~/.config/polybar/git.sh
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 ; vim:ft=dosini
