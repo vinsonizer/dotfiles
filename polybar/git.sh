@@ -1,8 +1,9 @@
 #!/bin/bash
 
 cd ${HOME}/.dotfiles
-export x=$(git fetch origin && git diff origin | grep "@@")
+export x=$(git fetch origin && git diff origin | grep "@@" | head -1 | wc -l)
+echo $x
 
-if [[ "$x1" -ne "1" ]]; then
+if [[ "$x" -eq "1" ]]; then
 	echo ""
 fi
