@@ -247,4 +247,3 @@ for_window [window_role="pop-up"] floating enable
 # Workspace assignement
 assign [class="Google-chrome"] 2
 assign [class="Slack"] 3
-assign [class="Steam"] 5 
