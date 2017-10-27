@@ -210,8 +210,8 @@ exec --no-startup-id xautolock
 exec --no-startup-id dunst
 
 # Network Manager Applet
-exec --no-startup-id /usr/bin/nm-applet
-exec --no-startup-id /usr/bin/blueman-applet
+# exec --no-startup-id /usr/bin/nm-applet
+# exec --no-startup-id /usr/bin/blueman-applet
 
 # Redshift
 exec --no-startup-id /usr/bin/redshift-gtk
