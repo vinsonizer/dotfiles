@@ -38,4 +38,5 @@ export LC_ALL=en_US.UTF-8
 export XDG_CURRENT_DESKTOP=i3
 
 xss-lock -- /home/jason/.dotfiles/scripts/locker.sh &
+/usr/bin/synergys &
 exec i3
