@@ -395,6 +395,7 @@ tail = true
 label = "  %output:0:300:...%"
 exec = python -u /home/jason/.config/polybar/hn.py
 click-left = google-chrome-stable `cat /tmp/hn.url`
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
 [module/log-tail]
 type = custom/script
