@@ -362,8 +362,7 @@ format = <label>
 label = "%output%"
 exec = ~/.config/polybar/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
-click-left = termite -e "sudo pacman -Syu"
-click-right = termite -e "yaourt -Syu --aur"
+click-left = termite -e "yaourt -Syu --aur"
 
 [module/weather]
 type = custom/script
