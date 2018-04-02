@@ -37,6 +37,11 @@ export TERMINAL=termite
 export LC_ALL=en_US.UTF-8
 export XDG_CURRENT_DESKTOP=i3
 
+# LAMENESS
+if [ "$HOSTNAME" == "shuttle" ] ; then
+  export ALSA_CARD=Generic
+fi
+
 xss-lock -- /home/jason/.dotfiles/scripts/locker.sh &
 /usr/bin/synergys -c .synergy.conf &
 exec i3
