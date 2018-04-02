@@ -4,7 +4,7 @@ pushd ${HOME}
 
 mkdir -p ${HOME}/.config
 
-dots=( xinitrc xprofile compton.conf aliases Xresources)
+dots=( xinitrc xprofile compton.conf synergy.conf aliases Xresources)
 configs=( i3 termite polybar dunst)
 
 for i in "${dots[@]}";
