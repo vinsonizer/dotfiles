@@ -15,7 +15,8 @@ set $mod Mod4
 # is used in the bar {} block below.
 #font pango:monospace 8
 #font pango:Roboto, Hack, Awesome 10
-font pango:Roboto 12
+#font pango:Roboto 12
+font pango:System San Fransico Display 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -194,13 +195,13 @@ mode "$mode_gaps_outer" {
 }
 
 # Background and compositor
-exec --no-startup-id compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --shadow-exclude "! name~=''" --config ~/.compton.conf -b --respect-prop-shadow
+exec --no-startup-id compton --backend xrender --paint-on-overlay --glx-no-stencil --shadow-exclude "! name~=''" --config ~/.compton.conf -b --respect-prop-shadow
 
 # Polybar
 exec_always --no-startup-id source $HOME/.config/polybar/env.sh && $HOME/.config/polybar/launch.sh
 
 # Variety
-exec_always --no-startup-id /usr/bin/variety
+exec --no-startup-id /usr/bin/variety
 
 # Locker
 bindsym $mod+l exec --no-startup-id "/home/jason/.dotfiles/scripts/locker.sh"
@@ -244,6 +245,26 @@ bindsym --release Print exec --no-startup-id scrot /tmp/`date +%Y%m%d_%H%M%S`.pn
 # Special handler for chrome popups
 for_window [window_role="pop-up"] floating enable
 
+# Preloads
+exec --no-startup-id /usr/bin/slack
+exec --no-startup-id /usr/bin/steam-runtime
+exec --no-startup-id /usr/bin/google-chrome-stable
+
 # Workspace assignement
 assign [class="Google-chrome"] 2
 assign [class="Slack"] 3
+assign [class="Steam"] 10
+
+# colors def
+set $bg-color			#2f343f
+set $inactive-bg-color		#2f343f
+set $text-color			#f3f4f5
+set $inactive-text-color	#676E7D
+set $urgent-bg-color		#E53935
+
+# window colors
+#			border			background		text			indicator
+client.focused		$bg-color		$bg-color		$text-color		#OOffOO
+client.unfocused	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	#OOffOO
+client.focused_inactive	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	#OOffOO
+client.urgent		$urgent-bg-color	$urgent-bg-color	$text-color		#OOffOO
