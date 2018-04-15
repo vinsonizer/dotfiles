@@ -205,13 +205,13 @@ exec --no-startup-id /usr/bin/variety
 
 # Locker
 bindsym $mod+l exec --no-startup-id "/home/jason/.dotfiles/scripts/locker.sh"
-exec --no-startup-id xautolock 
+# exec --no-startup-id xautolock 
 
 # Notifications
 exec --no-startup-id dunst
 
 # Network Manager Applet
-# exec --no-startup-id /usr/bin/nm-applet
+exec --no-startup-id /usr/bin/nm-applet
 # exec --no-startup-id /usr/bin/blueman-applet
 
 # Redshift
