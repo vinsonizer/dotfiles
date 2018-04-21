@@ -22,12 +22,20 @@ font pango:System San Fransico Display 12
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
+
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
+
+# colors def
+set $bg-color			#2f343f
+set $inactive-bg-color		#2f343f
+set $text-color			#f3f4f5
+set $inactive-text-color	#676E7D
+set $urgent-bg-color		#E53935
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -40,7 +48,8 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec /home/jason/.dotfiles/scripts/rofi.sh
+bindsym $mod+d exec rofi -show drun 
+# -color-window "black,black,black"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -143,13 +152,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-    #    status_command i3blocks
-    #    i3bar_command /home/jason/.config/lemonbar/bar.sh
-#}
-
 # Gaps
 # smart_gaps on
 smart_borders on
@@ -198,7 +200,7 @@ mode "$mode_gaps_outer" {
 exec --no-startup-id compton --backend xrender --paint-on-overlay --glx-no-stencil --shadow-exclude "! name~=''" --config ~/.compton.conf -b --respect-prop-shadow
 
 # Polybar
-exec_always --no-startup-id source $HOME/.config/polybar/env.sh && $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id source $HOME/.config/polybar/env.sh && $HOME/.config/polybar/launch.sh
 
 # Variety
 exec --no-startup-id /usr/bin/variety
@@ -255,16 +257,27 @@ assign [class="Google-chrome"] 2
 assign [class="Slack"] 3
 assign [class="Steam"] 10
 
-# colors def
-set $bg-color			#2f343f
-set $inactive-bg-color		#2f343f
-set $text-color			#f3f4f5
-set $inactive-text-color	#676E7D
-set $urgent-bg-color		#E53935
-
 # window colors
 #			border			background		text			indicator
 client.focused		$bg-color		$bg-color		$text-color		#OOffOO
 client.unfocused	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	#OOffOO
 client.focused_inactive	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	#OOffOO
 client.urgent		$urgent-bg-color	$urgent-bg-color	$text-color		#OOffOO
+
+hide_edge_borders both
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+	colors {
+		background $bg-color
+		separator #757575
+		#			border			background		text		
+		focused_workspace	$bg-color		$bg-color		$text-color		
+		inactive_workspace	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	
+		urgent_workspace	$urgent-bg-color	$urgent-bg-color	$text-color		
+	}
+	
+}
+

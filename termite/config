@@ -1,6 +1,7 @@
 [options]
 #font =  Droid Sans Mono Dotted for Powerline 18
-font =  System San Francisco Display 13
+# font =  System San Francisco Display 13
+font = Hack 11
 
 [colors]
 # Base16 Ashes
