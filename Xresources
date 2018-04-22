@@ -103,7 +103,8 @@ rofi.hide-scrollbar:                 true
 ! "New style theme file" Set from: Default
 ! rofi.theme:                          
 ! "Color scheme for normal row" Set from: XResources
-rofi.color-normal:                   argb:c82d303b, #000000, argb:c82d303b, argb:c82d303b, #cfcfcf
+!rofi.color-normal:                   argb:c82d303b, argb:c82d303b, argb:c82d303b, argb:c82d303b, #cfcfcf
+rofi.color-normal:                   argb:00000000, argb:44ffffff, argb:00000000, argb:00000000, argb:ffffffff
 ! "Color scheme for urgent row" Set from: Default
 ! rofi.color-urgent:                   
 ! "Color scheme for active row" Set from: Default
@@ -125,7 +126,7 @@ rofi.color-window:                   argb:c82d303b, argb:c82d303b, argb:c82d303b
 ! "The display name of this browser" Set from: Default
 ! rofi.display-ssh:                    
 ! "The display name of this browser" Set from: Default
-rofi.display-drun:                   Application
+rofi.display-drun:                   
 ! "The display name of this browser" Set from: Default
 ! rofi.display-combi:                  
 ! "The display name of this browser" Set from: Default
