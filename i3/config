@@ -200,7 +200,7 @@ mode "$mode_gaps_outer" {
 exec --no-startup-id compton --backend xrender --paint-on-overlay --glx-no-stencil --shadow-exclude "! name~=''" --config ~/.compton.conf -b --respect-prop-shadow
 
 # Polybar
-# exec_always --no-startup-id source $HOME/.config/polybar/env.sh && $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id source $HOME/.config/polybar/env.sh && $HOME/.config/polybar/launch.sh
 
 # Variety
 exec --no-startup-id /usr/bin/variety
