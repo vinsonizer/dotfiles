@@ -71,7 +71,7 @@ wm-restack = i3
 inherit = section/settings
 bottom = true
 
-modules-left = hn
+modules-left = gnews
 modules-center = 
 modules-right = volume
 
@@ -389,6 +389,14 @@ exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 type = custom/text
 content = WOL
 click-left = ~/.config/polybar/wol.sh
+
+[module/gnews]
+type = custom/script
+tail = true
+label = "  %output:0:300:...%"
+exec = python -u /home/jason/.config/polybar/gnews.py
+click-left = google-chrome-stable `cat /tmp/gnews.url`
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
 [module/hn]
 type = custom/script
