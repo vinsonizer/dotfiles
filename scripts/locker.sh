@@ -1,5 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-scrot /tmp/bg.png && mogrify -blur 4x8 /tmp/bg.png
-/usr/bin/i3lock -i /tmp/bg.png
-#/usr/bin/dm-tool switch-to-greeter
+icon="$HOME/.dotfiles/scripts/lock.png"
+tmpbg='/tmp/screen.png'
+
+(( $# )) && { icon=$1; }
+
+scrot "$tmpbg"
+convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
+convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
+i3lock -u -i "$tmpbg"
