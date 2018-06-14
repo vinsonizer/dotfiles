@@ -71,7 +71,7 @@ wm-restack = i3
 inherit = section/settings
 bottom = true
 
-modules-left = gnews
+modules-left = gnews 
 modules-center = 
 modules-right = volume
 
