@@ -251,6 +251,7 @@ for_window [window_role="pop-up"] floating enable
 exec --no-startup-id /usr/bin/slack
 exec --no-startup-id /usr/bin/steam-runtime
 exec --no-startup-id /usr/bin/google-chrome-stable
+exec --no-startup-id /usr/bin/termite
 
 # Workspace assignement
 assign [class="Google-chrome"] 2
