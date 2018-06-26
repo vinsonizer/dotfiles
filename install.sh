@@ -19,7 +19,7 @@ done
 
 for i in "${configs[@]}";
 do
-  if [ -f "${HOME}/.config/$i" ];
+  if [ -d "${HOME}/.config/$i" ];
   then
     echo $i already exists
   else
