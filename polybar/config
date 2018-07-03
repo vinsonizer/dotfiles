@@ -378,7 +378,7 @@ exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
 [module/dotfiles]
 type = custom/script
-interval = 600
+interval = 60
 format = <label>
 ;format-underline = #dc322f
 ;label = "%output:0:30%"
