@@ -72,7 +72,7 @@ inherit = section/settings
 bottom = true
 
 modules-left = xwindow
-modules-center = gnews 
+modules-center = gmusic 
 modules-right = volume
 
 
@@ -398,6 +398,13 @@ label = "  %output:0:300:...%"
 exec = python -u /home/jason/.config/polybar/gnews.py
 click-left = google-chrome-stable `cat /tmp/gnews.url`
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+[module/gmusic]
+type = custom/script
+tail = false 
+label = "  %output:0:300:...%"
+exec = python -u /home/jason/.config/polybar/gmusic.py
+interval = 5
 
 [module/hn]
 type = custom/script
