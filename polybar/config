@@ -72,8 +72,8 @@ inherit = section/settings
 bottom = true
 
 modules-left = xwindow
-modules-center = gmusic 
-modules-right = volume
+modules-center = gnews
+modules-right = gmusic
 
 
 [module/xwindow]
