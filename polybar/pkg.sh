@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-yay -Sy
+/usr/bin/yay -Sy
 
 check=$(yay -Pn)
 if [[ "$check" != "0" ]]

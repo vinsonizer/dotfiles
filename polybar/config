@@ -59,7 +59,7 @@ inherit = section/settings
 
 modules-left = i3
 modules-center = date weather
-modules-right = pkg dotfiles wol wlan battery
+modules-right = dotfiles wol wlan battery
 
 tray-position = right
 tray-padding = 2
