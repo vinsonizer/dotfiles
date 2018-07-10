@@ -26,6 +26,20 @@ if(len(sys.argv) == 1):
 
     print("%s%s, %i °%s" % (city, info, temp, unit_key))
 else:
-    forecast = eval(str(urllib.request.urlopen("http://api.openweathermap.org/data/2.5/forecast?lat={}&lon={}&APPID={}&units={}".format(lat, long, ow_api_key, units)).read())[2:-1])
-    print(forecast)
-    #datetime.date.fromtimestamp(1485799200).weekday()
+    forecast = eval(str(urllib.request.urlopen("http://api.openweathermap.org/data/2.5/forecast/daily?cnt=5&lat={}&lon={}&APPID={}&units={}".format(lat, long, ow_api_key, units)).read())[2:-1])
+    dayMap = {
+        0 : "Monday   ",
+        1 : "Tuesday  ",
+        2 : "Wednesday",
+        3 : "Thursday ",
+        4 : "Friday   ",
+        5 : "Saturday ",
+        6 : "Sunday   "}
+
+    flist = list(map((lambda x:
+        dayMap[datetime.date.fromtimestamp(x["dt"]).weekday()] + " " +
+        x["weather"][0]["main"] + " - " +
+        str(int(x["temp"]["min"])) + "/" +
+        str(int(x["temp"]["max"]))
+        ), forecast["list"]))
+    print('%s<br/>%s' % (forecast["city"]["name"], '\n'.join(map(str, flist))))

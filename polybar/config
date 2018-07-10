@@ -375,6 +375,8 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 exec = ~/.config/polybar/weather.py
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+click-left = /usr/bin/notify-send -t 10000 "$(.config/polybar/weather.py -f)"
+
 
 [module/dotfiles]
 type = custom/script
