@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-/usr/bin/yay -Sy
+sudo /usr/bin/yay -Sy > /dev/null 2>&1
 
 check=$(yay -Pn)
 if [[ "$check" != "0" ]]
