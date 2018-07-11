@@ -27,6 +27,7 @@ if(len(sys.argv) == 1):
     print("%s%s, %i °%s" % (city, info, temp, unit_key))
 else:
     forecast = eval(str(urllib.request.urlopen("http://api.openweathermap.org/data/2.5/forecast/daily?cnt=5&lat={}&lon={}&APPID={}&units={}".format(lat, long, ow_api_key, units)).read())[2:-1])
+    #print("http://api.openweathermap.org/data/2.5/forecast/daily?cnt=5&lat={}&lon={}&APPID={}&units={}".format(lat, long, ow_api_key, units))
     dayMap = {
         0 : "Monday   ",
         1 : "Tuesday  ",
@@ -36,10 +37,17 @@ else:
         5 : "Saturday ",
         6 : "Sunday   "}
 
-    flist = list(map((lambda x:
-        dayMap[datetime.date.fromtimestamp(x["dt"]).weekday()] + " " +
-        x["weather"][0]["main"] + " - " +
-        str(int(x["temp"]["min"])) + "/" +
-        str(int(x["temp"]["max"]))
-        ), forecast["list"]))
+    def extractDay(dt):
+        return dayMap[datetime.date.fromtimestamp(dt).weekday()]
+
+    def extractWeather(x):
+        return x["weather"][0]["main"] + " - "
+
+    def extractTemp(x):
+        return str(int(x["temp"]["min"])) + "/" + str(int(x["temp"]["max"]))
+
+    def getForecast(x):
+        return extractDay(x["dt"]) + " " + extractWeather(x) + " " + extractTemp(x)
+
+    flist = list(map((lambda x: getForecast(x)), forecast["list"]))
     print('%s<br/>%s' % (forecast["city"]["name"], '\n'.join(map(str, flist))))
