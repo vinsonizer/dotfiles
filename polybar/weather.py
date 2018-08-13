@@ -24,7 +24,7 @@ if(len(sys.argv) == 1):
     info = weather["weather"][0]["description"].title()
     temp = int(float(weather["main"]["temp"]))
 
-    print("%s%s, %i °%s" % (city, info, temp, unit_key))
+    print("%s, %i °%s" % (info, temp, unit_key))
 else:
     forecast = eval(str(urllib.request.urlopen("http://api.openweathermap.org/data/2.5/forecast/daily?cnt=5&lat={}&lon={}&APPID={}&units={}".format(lat, long, ow_api_key, units)).read())[2:-1])
     #print("http://api.openweathermap.org/data/2.5/forecast/daily?cnt=5&lat={}&lon={}&APPID={}&units={}".format(lat, long, ow_api_key, units))
