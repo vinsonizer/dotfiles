@@ -8,7 +8,7 @@ city = "Tega%20Cay"
 units = "Imperial"
 unit_key = "F"
 
-ip = urllib.request.urlopen('https://ident.me').read().decode('utf8')
+ip = urllib.request.urlopen('http://ident.me').read().decode('utf8')
 
 location = eval(urllib.request.urlopen("http://api.ipstack.com/{}?access_key={}&fields=latitude,longitude,city".format(ip, ip_api_key)).read().decode("utf8"))
 
