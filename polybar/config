@@ -373,9 +373,9 @@ interval = 600
 format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-exec = ~/.config/polybar/weather.py
+exec = ~/.config/polybar/poly_weather.py
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
-click-left = ~/.config/polybar/weather.py -f
+click-left = ~/.config/polybar/poly_weather.py -f
 
 [module/dotfiles]
 type = custom/script
