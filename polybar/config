@@ -358,7 +358,7 @@ menu-2-1-exec = menu-open-0
 
 [module/pkg]
 type = custom/script
-interval = 604800
+interval = 300
 format = <label>
 ;format-underline = #dc322f
 ;label = "%output:0:30%"
@@ -375,7 +375,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 exec = ~/.config/polybar/poly_weather.py
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
-click-left = ~/.config/polybar/poly_weather.py -f
+click-left = notify-send "$(./poly_weather.py -f )"
 
 [module/dotfiles]
 type = custom/script
