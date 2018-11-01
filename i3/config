@@ -252,7 +252,7 @@ exec --no-startup-id /usr/bin/slack
 exec --no-startup-id /usr/bin/steam-runtime
 exec --no-startup-id /usr/bin/google-chrome-stable
 exec --no-startup-id /usr/bin/termite
-exec --no-startup-id /usr/bin/gpmdp
+# exec --no-startup-id /usr/bin/gpmdp
 
 # Workspace assignement
 assign [class="Google-chrome"] 2
