@@ -43,5 +43,4 @@ if [ "$HOSTNAME" == "shuttle" ] ; then
 fi
 
 xss-lock -- /home/jason/.dotfiles/scripts/locker.sh &
-/usr/bin/synergys -c .synergy.conf &
 exec i3
