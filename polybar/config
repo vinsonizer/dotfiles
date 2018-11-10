@@ -73,7 +73,7 @@ bottom = true
 
 modules-left = xwindow
 modules-center = gnews
-modules-right = gmusic
+modules-right = 
 
 
 [module/xwindow]
