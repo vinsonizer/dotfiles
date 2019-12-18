@@ -58,7 +58,7 @@ font-4 = Font Awesome 5 Brands:pixelsize=12:style=Regular
 inherit = section/settings
 
 modules-left = i3
-modules-center = date weather
+modules-center = date 
 modules-right = pkg dotfiles wol wlan battery
 
 tray-position = right

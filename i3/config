@@ -249,15 +249,14 @@ for_window [window_role="pop-up"] floating enable
 
 # Preloads
 exec --no-startup-id /usr/bin/slack
-exec --no-startup-id /usr/bin/steam-runtime
+exec --no-startup-id /usr/bin/steam
 exec --no-startup-id /usr/bin/google-chrome-stable
 exec --no-startup-id /usr/bin/termite
 # exec --no-startup-id /usr/bin/gpmdp
 
 # Workspace assignement
-assign [class="Google-chrome"] 2
+assign [class="Brave-browser"] 2
 assign [class="Slack"] 3
-assign [class="Google Play Music Desktop Player"] 9
 assign [class="Steam"] 10
 
 # window colors
