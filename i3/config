@@ -255,7 +255,7 @@ exec --no-startup-id /usr/bin/termite
 # exec --no-startup-id /usr/bin/gpmdp
 
 # Workspace assignement
-assign [class="Brave-browser"] 2
+assign [class="Google-chrome"] 2
 assign [class="Slack"] 3
 assign [class="Steam"] 10
 
