@@ -1,5 +1,6 @@
 [options]
-font =  Droid Sans Mono Dotted for Powerline 11
+# font =  Droid Sans Mono Dotted for Powerline 11
+font = Hack 11
 
 [colors]
 # Base16 Ashes
